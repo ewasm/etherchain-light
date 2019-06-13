@@ -21,8 +21,10 @@ block content
       if account.isContract
         li(role='presentation')
           a(href='#code', aria-controls='code', role='tab', data-toggle='tab') Bytecode
+      if account.wast
         li(role='presentation')
           a(href='#wastcode', aria-controls='wastcode', role='tab', data-toggle='tab') Wast Code
+      if account.isContract
         li(role='presentation')
           a(href='#storage', aria-controls='storage', role='tab', data-toggle='tab') Storage  
       if account.source
@@ -99,6 +101,7 @@ block content
         #wastcode.tab-pane(role='tabpanel')  
           h3 Wast code
           pre(class="wast") #{account.wast}
+      if account.isContract
         #storage.tab-pane(role='tabpanel')
           h3 Storage
           pre #{JSON.stringify(account.storage, undefined, 2)}
