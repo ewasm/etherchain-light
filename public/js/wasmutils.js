@@ -1,3 +1,5 @@
+window.wabt = this.WabtModule()
+
 function hex2buf (hex) {
   let typedArray = new Uint8Array(hex.match(/[\da-f]{2}/gi).map(function (h) {
     return parseInt(h, 16)
